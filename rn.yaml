@@ -1,0 +1,56 @@
+proxies:
+- name: vless-reality-vision-racknerd-821a8e               
+  type: vless
+  server: 142.171.7.248                           
+  port: 32141                                
+  uuid: 19557b77-7d37-433f-a785-47171b687942   
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                 
+  reality-opts: 
+    public-key: 5kG7Pgqw-k9T95NljlbepNNH0B-FMowR9-BhSsEITl8    
+    short-id: b8d1ac45                      
+  client-fingerprint: chrome                  
+
+- name: vmess-ws-racknerd-821a8e                         
+  type: vmess
+  server: 142.171.7.248                        
+  port: 2086                                     
+  uuid: 19557b77-7d37-433f-a785-47171b687942       
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: www.bing.com                    
+  ws-opts:
+    path: "19557b77-7d37-433f-a785-47171b687942-vm"                             
+    headers:
+      Host: www.bing.com                     
+
+- name: hysteria2-racknerd-821a8e                            
+  type: hysteria2                                      
+  server: 142.171.7.248                               
+  port: 2415                                
+  password: 19557b77-7d37-433f-a785-47171b687942                          
+  alpn:
+    - h3
+  sni: www.bing.com                               
+  skip-cert-verify: true
+  fast-open: true
+
+- name: tuic5-racknerd-821a8e                            
+  server: 142.171.7.248                      
+  port: 27781                                    
+  type: tuic
+  uuid: 19557b77-7d37-433f-a785-47171b687942       
+  password: 19557b77-7d37-433f-a785-47171b687942   
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: www.bing.com                                
+  skip-cert-verify: true  
